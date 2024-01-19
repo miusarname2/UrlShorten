@@ -7,8 +7,8 @@ export default function App() {
   }
   const changeState = (e:React.ChangeEvent<HTMLInputElement>)=>{
     setLinkToShort(e.target.value);
+    console.log(linkToShort);
   }
-  const clicked = ()=>{alert(linkToShort)}
   return (
     <>
       <div className="min-h-screen bg-gray-100 py-10">

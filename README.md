@@ -1,38 +1,73 @@
-# URL Shortener Service
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+</p>
 
-This service represents a URL shortener that showcases the seamless integration of backend and frontend development skills. Crafted with efficiency and elegance, the application is deployed on the Vercel platform, illustrating the ability to harmoniously orchestrate both disciplines.
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-## Features
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-- **URL Shortening**: Easily shorten long URLs into concise, manageable links.
-- **Efficient Implementation**: The service is implemented with efficiency in mind, ensuring swift processing and response times.
-- **Elegant User Interface**: The frontend boasts an intuitive and user-friendly interface for a seamless experience.
-- **Vercel Integration**: Leveraging the Vercel platform, the service demonstrates proficiency in deployment and hosting.
+## Description
 
-## Technologies Used
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-- **Backend Development**: Node.js, Express.js
-- **Frontend Development**: HTML, CSS, JavaScript
-- **Deployment Platform**: Vercel
+## Installation
 
-## Usage
+```bash
+$ npm install
+```
 
-1. **Shortening URLs**: Simply paste your long URL into the designated input field and click "Shorten" to generate a shortened link.
-2. **Accessing Shortened URLs**: Enter the shortened link into your browser's address bar to be redirected to the original URL.
+## Running the app
 
-## Deployment
+```bash
+# development
+$ npm run start
 
-The service is efficiently deployed on the Vercel platform, ensuring high availability and reliability. Continuous integration and deployment pipelines are established for seamless updates and maintenance.
+# watch mode
+$ npm run start:dev
 
-## Acknowledgments
+# production mode
+$ npm run start:prod
+```
 
-- **Vercel**: The deployment platform used for hosting the application.
-- **Open Source Community**: Various libraries and frameworks utilized in the development process.
+## Test
 
-## Contributing
+```bash
+# unit tests
+$ npm run test
 
-Contributions are welcome! Feel free to fork the repository and submit pull requests for any enhancements or bug fixes.
+# e2e tests
+$ npm run test:e2e
+
+# test coverage
+$ npm run test:cov
+```
+
+## Support
+
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+
+## Stay in touch
+
+- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+Nest is [MIT licensed](LICENSE).

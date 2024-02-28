@@ -1,15 +1,34 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { CreateUrlDto } from './dto/create-url.dto';
 import { UpdateUrlDto } from './dto/update-url.dto';
 
 @Injectable()
 export class UrlService {
-  create(createUrlDto: CreateUrlDto) {
-    return 'This action adds a new url';
+  conn: any;
+  url: any;
+
+  constructor(@Inject('CONNECTION') private readonly connection: any) {
+    this.conn = this.connection;
   }
 
-  findAll() {
-    return `This action returns all url`;
+  async create(createUrlDto: CreateUrlDto) {
+    this.url = this.conn.collection('url');
+    try {
+      return await this.url.insertOne(createUrlDto);
+    } catch (error) {
+      return { error: error, completed: false };
+    }
+  }
+
+  async findAll() {
+    try {
+      return await this.url.find()
+      .project({ attendant: 0, quotes: 0 })
+      .sort({ "names.name": 1 })
+      .toArray();;
+    } catch (error) {
+      return { error: error, completed: false };
+    }
   }
 
   findOne(id: number) {

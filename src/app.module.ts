@@ -18,7 +18,7 @@ import { con } from './connection.db';
     {
       provide: 'CONNECTION', // Define un nombre para el proveedor
       inject: [ConfigService], // Especifica las dependencias que necesita la función con
-      useFactory: (configService: ConfigService) => con(configService), // Usa una fábrica para crear la instancia
+      useFactory: async(configService: ConfigService) => await con(configService), // Usa una fábrica para crear la instancia
     },
   ],
 })

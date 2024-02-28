@@ -9,10 +9,10 @@ export class UrlService {
 
   constructor(@Inject('CONNECTION') private readonly connection: any) {
     this.conn = this.connection;
+    this.url = this.conn.collection('url');
   }
 
   async create(createUrlDto: CreateUrlDto) {
-    this.url = this.conn.collection('url');
     try {
       return await this.url.insertOne(createUrlDto);
     } catch (error) {
@@ -22,10 +22,7 @@ export class UrlService {
 
   async findAll() {
     try {
-      return await this.url.find()
-      .project({ attendant: 0, quotes: 0 })
-      .sort({ "names.name": 1 })
-      .toArray();;
+      return await this.url.find().toArray();
     } catch (error) {
       return { error: error, completed: false };
     }

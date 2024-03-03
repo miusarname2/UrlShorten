@@ -1,3 +1,5 @@
+<img src="https://img.shields.io/badge/State-Developing-green">
+
 # URL Shortener Service
 
 This service represents a URL shortener that showcases the seamless integration of backend and frontend development skills. Crafted with efficiency and elegance, the application is deployed on the Vercel platform, illustrating the ability to harmoniously orchestrate both disciplines.

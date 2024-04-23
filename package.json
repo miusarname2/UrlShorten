@@ -2,18 +2,19 @@
   "name": "urlshorten",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx tsc",
-    "start": "node dist/index.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
+    "start": "node dist/main.js",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/main.js\""
   },
   "keywords": [],
   "author": "Oscar M Alvarez G",
   "license": "ISC",
   "devDependencies": {
+    "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.21",
     "@types/node": "^20.12.7",
     "@types/passport-http-bearer": "^1.0.41",
@@ -21,6 +22,7 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
+    "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",

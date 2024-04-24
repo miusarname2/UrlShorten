@@ -1,13 +1,43 @@
 import React, { useState } from "react";
 
 export default function App() {
-  const [linkToShort, setLinkToShort] = useState<string|null>("");
+  const [linkToShort, setLinkToShort] = useState<string>("");
   const mockResp =()=>{
     alert("This is an a fake we dont have a counts")
   }
   const changeState = (e:React.ChangeEvent<HTMLInputElement>)=>{
     setLinkToShort(e.target.value);
+  }
+
+  const doRequest =async ()=>{
     console.log(linkToShort);
+    const url = 'https://urlshorten-dwrh.onrender.com';
+    const data = {
+      link:linkToShort
+    };
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    };
+    fetch(url, requestOptions)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('La solicitud no fue exitosa');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Respuesta del servidor:', data);
+        // Puedes manejar la respuesta del servidor aquí
+      })
+      .catch(error => {
+        console.error('Error al realizar la solicitud:', error);
+        // Puedes manejar errores aquí, como mostrar un mensaje al usuario
+      });
+    setLinkToShort("");
   }
   return (
     <>
@@ -24,9 +54,10 @@ export default function App() {
               <input
                 className="flex h-12 w-full rounded-md border border-input bg-background px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 flex-1"
                 placeholder="Enter the link here"
+                value={linkToShort}
                 onChange={changeState}
               />
-              <button className="inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium ring-offset-background tfocus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 ml-2">
+              <button onClick={doRequest} className="inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium ring-offset-background tfocus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 ml-2">
                 Shorten URL
               </button>
             </div>

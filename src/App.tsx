@@ -1,28 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, {useState} from "react";
 
 export default function App() {
   const [linkToShort, setLinkToShort] = useState<string>("");
-  
-  useEffect(() => {
-    // Obtener la URL actual del navegador
-    const currentUrl = window.location.hostname;
-    console.log(currentUrl.split('/')[3]);
-    // Verificar si la URL actual tiene parámetros
-    if (currentUrl && currentUrl.includes('/')) {
-      const parametros = currentUrl.split('/')[3]; // Cambia el índice según la estructura de tu URL
-      // Hacer el fetch a otra URL utilizando los parámetros
-      fetch(`https://urlshorten-dwrh.onrender.com/link/${parametros}`)
-        .then(response => response.json())
-        .then(data => {
-          let url = data.data.link;
-          if (!url.startsWith("http://") && !url.startsWith("https://")) {
-            url = "https://" + url; // Agregar el protocolo si no está presente
-          }
-          window.location.href = url; // Redirigir al usuario a la URL absoluta
-        })
-    }
-  }, []);
-  
+    
   const mockResp =()=>{
     alert("This is an a fake we dont have a counts")
   }
@@ -52,9 +32,7 @@ export default function App() {
       })
       .then(data => {
         console.log('Respuesta del servidor:', data.reference);
-        const dominioCompleto = window.location.hostname;
-        setLinkToShort(`${dominioCompleto}/${data.reference}`);
-        console.log("Dominio principal:", dominioCompleto); // Esto imprimirá "co"
+        setLinkToShort(`urlshorten-dwrh.onrender.com/link/${data.reference}`);
       })
       .catch(error => {
         console.error('Error al realizar la solicitud:', error);

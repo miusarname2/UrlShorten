@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/badge/State-Developing-green">
+<img src="https://img.shields.io/badge/State-Finished-blue">
 
 # URL Shortener Service
 

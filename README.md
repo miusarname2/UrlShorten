@@ -13,9 +13,9 @@ This service represents a URL shortener that showcases the seamless integration 
 
 ## Technologies Used
 
-- **Backend Development**: Node.js, Express.js
-- **Frontend Development**: HTML, CSS, JavaScript
-- **Deployment Platform**: Vercel
+- **Backend Development**: Node.js, Express.js,Typescript,MongoDB
+- **Frontend Development**: React,Typescript
+- **Deployment Platform**: Render
 
 ## Usage
 

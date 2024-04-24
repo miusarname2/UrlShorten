@@ -18,7 +18,7 @@ export default function App() {
           if (!url.startsWith("http://") && !url.startsWith("https://")) {
             url = "https://" + url; // Agregar el protocolo si no está presente
           }
-          window.location.hostname = url; // Redirigir al usuario a la URL absoluta
+          window.location.href = url; // Redirigir al usuario a la URL absoluta
         })
     }
   }, []);

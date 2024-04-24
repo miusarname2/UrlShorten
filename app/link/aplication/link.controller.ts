@@ -24,10 +24,16 @@ export async function createLinks(req:Request | any ,res:Response): Promise<Resp
     }
 }
 
-export async function getLinkByIds(req:Request | any,res:Response): Promise<Response<any, Record<string, any>>> {
+export async function getLinkByIds(req:Request | any,res:Response) {
     try {
         let link = await getLinkById(req.params.id);
-        return res.status(200).json({message:"sucess",data:link});
+        console.log(link.link);
+        let url =await link.link;
+        if (!url.startsWith("http://") && !url.startsWith("https://")) {
+            url = "https://" + url; 
+            console.log(url);
+          }
+        res.redirect(url);
     } catch (error:any) {
         console.log(error);
         return res.status(404).json({messsage:"not found",status:404})

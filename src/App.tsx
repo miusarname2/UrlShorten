@@ -5,7 +5,7 @@ export default function App() {
   
   useEffect(() => {
     // Obtener la URL actual del navegador
-    const currentUrl = window.location.href;
+    const currentUrl = window.location.hostname;
     console.log(currentUrl.split('/')[3]);
     // Verificar si la URL actual tiene parámetros
     if (currentUrl && currentUrl.includes('/')) {
@@ -18,7 +18,7 @@ export default function App() {
           if (!url.startsWith("http://") && !url.startsWith("https://")) {
             url = "https://" + url; // Agregar el protocolo si no está presente
           }
-          window.location.href = url; // Redirigir al usuario a la URL absoluta
+          window.location.hostname = url; // Redirigir al usuario a la URL absoluta
         })
     }
   }, []);

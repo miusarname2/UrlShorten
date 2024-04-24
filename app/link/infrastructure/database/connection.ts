@@ -12,18 +12,3 @@ export async function con() {
     return { status: 500, message: error.message };
   }
 }
-
-async function connectToMongoDB() {
-  const client = new MongoClient('mongodb+srv://root:oscar3004@cluster0.ap9ecpy.mongodb.net');
-
-try {
-  await client.connect();
-  const db = client.db('nombre_de_tu_base_de_datos');
-  const links = db.collection('nombre_de_tu_coleccion');
-  // Ahora puedes usar `links` para interactuar con tu colección
-} catch (error) {
-  console.error('Error al conectar a MongoDB:', error);
-}
-}
-
-connectToMongoDB();

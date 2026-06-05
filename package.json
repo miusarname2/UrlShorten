@@ -6,9 +6,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx tsc",
+    "build": "tsc",
     "start": "node dist/main.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/main.js\""
+    "dev": "concurrently \"tsc --watch\" \"nodemon -q dist/main.js\""
   },
   "keywords": [],
   "author": "Oscar M Alvarez G",
